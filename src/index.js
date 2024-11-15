@@ -7,7 +7,7 @@ const apiRoutes = require('./routes');
 const app = express();
 const limiter = rateLimit({
     windowMs: 2 * 60 * 1000, // 2 minutes
-    limit: 3, // Limit each IP to 3 requests per `window` (here, per 15 minutes).
+    limit: 10, // Limit each IP to 3 requests per `window` (here, per 15 minutes).
     standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
     // store: ... , // Redis, Memcached, etc. See below.
